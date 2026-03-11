@@ -1,0 +1,19 @@
+function updateLosAngelesTime() {
+let losAngelesElement = document.querySelector("#los-angeles");
+let losAngelesDateElement = losAngelesElement.querySelector(".date");
+let losAngelesTimeElement = losAngelesElement.querySelector(".time");
+losAngelesDateElement.innerHTML = moment().tz("America/Los_Angeles").format("MMMM Do, YYYY");
+losAngelesTimeElement.innerHTML = moment().tz("America/Los_Angeles").format("h:mm:ss [<small>]A[</small>]");
+}
+updateLosAngelesTime();
+setInterval(updateLosAngelesTime, 1000);
+
+function updateParisTime() {
+let parisElement = document.querySelector("#paris");
+let parisDateElement = parisElement.querySelector(".date");
+let parisTimeElement = parisElement.querySelector(".time");
+parisDateElement.innerHTML = moment().tz("Europe/Paris").format("MMMM Do, YYYY");
+parisTimeElement.innerHTML = moment().tz("Europe/Paris").format("h:mm:ss [<small>]A[</small>]");
+}
+updateParisTime();
+setInterval(updateParisTime, 1000);
